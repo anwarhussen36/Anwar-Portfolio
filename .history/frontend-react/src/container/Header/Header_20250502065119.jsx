@@ -60,7 +60,7 @@ const Header = () => (
     whileInView={scaleVariants.whileInView}
     className='app__header-circles'
     >
-        {[images.bootstrap, images.react, images.node, images.mysql].map((circle,index)=>(
+        {[images.bootstrap, images.react, images.php, images.node].map((circle,index)=>(
           <div className='circle-cmp app__flex' key={`circle-${index}`}>
             <img src={circle} alt='profile_bg'/>
           </div>  

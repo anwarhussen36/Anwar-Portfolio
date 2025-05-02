@@ -156,28 +156,15 @@
         flex-wrap: wrap;
         margin-left: 0;
 
-        div:nth-child(2){
-            margin: 1rem;
-            width: 70px;
-            height: 70px;
-        }
-        div:nth-child(3){
-            margin: 1rem;
-            width: 70px;
-            height: 70px;
-            img{
-                width: 60px;
-                height: 60px;
+        div {
+            width: 80px;
+            height: 80px;
+          
+            img {
+              width: 60%;
+              height: 60%;
             }
-        }
-        div:nth-child(1){
-            width: 70px;
-            height: 70px;
-        }
-        diV:nth-child(4){
-            width: 70px;
-            height: 70px;
-        }
+          }
           
     }
 }

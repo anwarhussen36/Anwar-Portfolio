@@ -54,7 +54,7 @@ const About = () => {
 
       <div className="resume">
         {resume ? (
-          <a href={resume} download="Resume" className="resume-btn" target='_blank' rel="noreferrer">
+          <a href={resume} download="Resume" className="resume-btn" target='_blank'>
             Download Resume
           </a>
         ) : (

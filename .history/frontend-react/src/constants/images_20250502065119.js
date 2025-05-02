@@ -5,7 +5,6 @@ import node from '../assets/node.png';
 import react from '../assets/react.png';
 import php from '../assets/php.png';
 import bootstrap from '../assets/bootstrap.png';
-import mysql from '../assets/mysql.svg';
 
 
 
@@ -24,7 +23,6 @@ export default {
   node,
   react,
   php,
-  mysql,
   bootstrap,
   
   profile,

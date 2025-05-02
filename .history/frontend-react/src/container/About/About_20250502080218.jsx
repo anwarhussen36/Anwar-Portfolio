@@ -6,25 +6,21 @@ import { urlFor, client } from '../../client';
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
-  const [resume, setResume] = useState();  // Add state for resume
+  const [resume, setResume] = useState(null);  // Add state for resume
 
   useEffect(() => {
     const aboutQuery = '*[_type == "abouts"]';
-    const resumeQuery = '*[_type == "resume"][0]{file{asset->{url}}}';
-
+    const resumeQuery = '*[_type == "resume"]';
 
     // Fetch about data
     client.fetch(aboutQuery).then((data) => setAbouts(data));
 
-
+    // Fetch resume data
     client.fetch(resumeQuery).then((data) => {
-      if (data?.file?.asset?.url) {
-        setResume(data.file.asset.url); // Direct usable URL!
-      } else {
-        console.error('Resume URL not found');
+      if (data && data.length > 0) {
+        setResume(data[0].file.asset.url); // Set resume file URL
       }
     });
-    
   }, []);
 
   return (
@@ -54,7 +50,7 @@ const About = () => {
 
       <div className="resume">
         {resume ? (
-          <a href={resume} download="Resume" className="resume-btn" target='_blank' rel="noreferrer">
+          <a href={resume.file} download="Resume" className="resume-btn">
             Download Resume
           </a>
         ) : (

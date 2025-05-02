@@ -9,4 +9,4 @@ import brands from "./brands";
 import resume from "./resume";
 
 
-export const schemaTypes=[abouts,testimonials,brands,contact, experiences, skills, workExperience, works, resume];
+export const schemaTypes=[abouts,testimonials,brands,contact, experiences, skills, workExperience, works];

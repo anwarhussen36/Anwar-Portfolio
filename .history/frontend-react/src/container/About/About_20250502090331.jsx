@@ -10,21 +10,21 @@ const About = () => {
 
   useEffect(() => {
     const aboutQuery = '*[_type == "abouts"]';
-    const resumeQuery = '*[_type == "resume"][0]{file{asset->{url}}}';
-
+    const resumeQuery = '*[_type == "resume"]';
 
     // Fetch about data
     client.fetch(aboutQuery).then((data) => setAbouts(data));
 
-
+    // Fetch resume data
     client.fetch(resumeQuery).then((data) => {
-      if (data?.file?.asset?.url) {
-        setResume(data.file.asset.url); // Direct usable URL!
+      if (data?.[0]?.file?.asset?._ref) {
+        const assetId = data[0].file.asset._ref;
+        const url = `https://cdn.sanity.io/files/rdd3i0fc/production/${assetId.split('-')[1]}.${assetId.split('-')[2]}`;
+        setResume(url);
       } else {
-        console.error('Resume URL not found');
+        console.error('Resume file not found.');
       }
     });
-    
   }, []);
 
   return (
@@ -54,7 +54,7 @@ const About = () => {
 
       <div className="resume">
         {resume ? (
-          <a href={resume} download="Resume" className="resume-btn" target='_blank' rel="noreferrer">
+          <a href={resume} download="Resume" className="resume-btn">
             Download Resume
           </a>
         ) : (

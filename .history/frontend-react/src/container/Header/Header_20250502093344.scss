@@ -150,36 +150,17 @@
             margin: 1rem;
         }
     }
-    @media screen and (max-width: 820px) {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-left: 0;
+    // @media screen and (max-width: 555px) {
+    //     display: none;
+    //     width: 100%;
+    //     flex-direction: row;
+    //     flex-wrap: wrap;
+    //     margin-left: 0;
 
-        div:nth-child(2){
-            margin: 1rem;
-            width: 70px;
-            height: 70px;
-        }
-        div:nth-child(3){
-            margin: 1rem;
-            width: 70px;
-            height: 70px;
-            img{
-                width: 60px;
-                height: 60px;
-            }
-        }
-        div:nth-child(1){
-            width: 70px;
-            height: 70px;
-        }
-        diV:nth-child(4){
-            width: 70px;
-            height: 70px;
-        }
-          
-    }
+    //     div{
+    //         margin: 1rem;
+    //     }
+    // }
 }
 .app__header-img{
     flex: 1;
